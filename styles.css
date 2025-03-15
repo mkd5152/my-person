@@ -23,9 +23,45 @@ div#hiddenMessage.hidden {
     display: none;
 }
 
-div#hiddenMessage p { /* Add this rule */
+div#hiddenMessage p {
+    /* Add this rule */
     color: black;
 }
+
+div#secretSpot.hidden,
+p#hiddenNote.hidden {
+    display: none;
+}
+
+#secretSpot {
+    position: relative;
+    width: 80px; /* Adjust as needed */
+    height: 80px;
+    background: url('./assets/feather.png') no-repeat center center;
+    background-size: contain;
+    display: none;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+#hiddenNote {
+    background: linear-gradient(135deg, #fff8f0, #ffe8cc);
+    /* border-radius: 15px; */
+    position: relative;
+    box-shadow: 0px 0px 20px rgba(255, 180, 130, 0.3);
+    color: #5a4a42;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+    z-index: 1000;
+}
+
+.clickable {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
 
 /* Background Animation */
 @keyframes bgShift {
@@ -139,4 +175,18 @@ h1,
 .letter-text,
 button {
     animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
