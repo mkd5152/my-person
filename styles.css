@@ -19,6 +19,14 @@ p#midnightMessage.hidden {
     display: none;
 }
 
+div#hiddenMessage.hidden {
+    display: none;
+}
+
+div#hiddenMessage p { /* Add this rule */
+    color: black;
+}
+
 /* Background Animation */
 @keyframes bgShift {
     0% {
@@ -77,6 +85,7 @@ p.letter-text {
 
 /* Enchanting Button */
 button {
+    font-family: 'Quicksand', sans-serif;
     background: linear-gradient(135deg, #ff758c, #ff7eb3);
     color: white;
     border: none;
