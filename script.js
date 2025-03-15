@@ -1,60 +1,48 @@
+// Show the initial button and start the process on click
 document.getElementById("startButton").addEventListener("click", function() {
-    document.getElementById("startButton").style.display = "none";
-    revealLetter();
+    this.style.display = "none"; // Hide the initial button
+    document.getElementById("letterContainer").classList.remove("hidden"); // Show the letter container
+    revealLetter(); // Start revealing the notes
 });
 
+// Function to reveal the letter lines one by one
 function revealLetter() {
     const lines = [
-        "I know nights feel impossible.",
-        "I know your body is tired of fighting.",
-        "But can I ask you something?",
-        "What if you stay? Just for one more hour.",
-        "Stay, because you are not invisible to me.",
-        "I see you. I choose you. Always.",
-        "If it feels too heavy, just press this."
+        "Hey you, I know it’s been heavy lately.",
+        "You don’t have to carry it all by yourself.",
+        "Even on the nights you feel invisible, I see you.",
+        "What if you stayed? Just for one more moment?",
+        "Because even in your quietest days, you are not forgotten.",
+        "I choose you. In all your light and all your storm.",
+        "If it feels too much, just press this."
     ];
 
     let i = 0;
     function typeLine() {
         if (i < lines.length) {
-            document.getElementById(`line${i + 1}`).textContent = lines[i];
-            document.getElementById(`line${i + 1}`).classList.add("fade-in");
+            let lineElement = document.getElementById(`line${i + 1}`);
+            lineElement.textContent = lines[i];
+            lineElement.classList.add("fade-in"); // Smooth fade-in animation
+            lineElement.style.display = "block"; // Show the text box
             i++;
-            setTimeout(typeLine, 2000);
+            setTimeout(typeLine, 1500); // Show next box after 1.5 seconds
         } else {
+            // Show the buttons after all notes have appeared
             document.getElementById("comfortButton").classList.remove("hidden");
             document.getElementById("readStruggles").classList.remove("hidden");
         }
     }
 
-    typeLine();
+    typeLine(); // Call the function to start typing the lines
 }
 
+// Comfort Button Functionality
 document.getElementById("comfortButton").addEventListener("click", function() {
     document.getElementById("hiddenMessage").classList.remove("hidden");
     document.querySelector(".breathing-container").classList.remove("hidden");
 });
 
-// ** Late Night Mode **
-const hour = new Date().getHours();
-if (hour >= 0 && hour <= 4) {
+// Midnight Message
+if (new Date().getHours() >= 0 && new Date().getHours() <= 4) {
     document.getElementById("midnightMessage").classList.remove("hidden");
-}
-
-// ** Personal Struggles Page **
-if (window.location.pathname.includes("letter.html")) {
-    const struggles = [
-        "You started Ramadan with a fever, exhausted and unwell.",
-        "Hasan fell sick too, and no one really cared for either of you.",
-        "Your headaches never stopped. You went 15 days with constant pain.",
-        "They forced you to fast, but your body rejected it. You threw up.",
-        "Even when you were starving at night, no one brought you food.",
-        "70 days of missed periods, and they made you take endless tests."
-    ];
-
-    struggles.forEach((struggle, index) => {
-        setTimeout(() => {
-            document.getElementById(`struggle${index + 1}`).textContent = struggle;
-        }, index * 2000);
-    });
 }

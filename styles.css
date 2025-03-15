@@ -1,61 +1,124 @@
+/* General Styles */
 body {
-    background: #2a2b3d;
-    color: #f5e6ca;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Quicksand', sans-serif;
+    animation: bgShift 10s infinite alternate ease-in-out;
+    background: #f9f5f2;
+    color: #5a4a42;
     text-align: center;
     margin: 0;
     padding: 20px;
+    transition: background 0.5s, color 0.5s;
 }
 
+/* Background Animation */
+@keyframes bgShift {
+    0% {
+        background: #f9f5f2;
+    }
+
+    100% {
+        background: #ffe8cc;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #222;
+        color: #fff;
+    }
+}
+
+/* Soft Glow Container */
 .container {
-    max-width: 600px;
+    max-width: 650px;
     margin: auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
-    animation: fadeIn 3s ease;
+    padding: 25px;
+    background: linear-gradient(135deg, #fff8f0, #ffe8cc);
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(255, 180, 130, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Title */
 h1 {
-    font-size: 30px;
-    color: #FFD700;
+    font-size: 28px;
+    color: #444;
+    transition: color 0.5s;
+}
+
+/* Sticky Notes Effect */
+p.letter-text {
+    background: #fff5e1;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-}
-
-p {
     font-size: 18px;
+    font-weight: bold;
+    color: #4a4a4a;
     line-height: 1.6;
-    color: #D1D5DB;
-    text-align: left;
-    margin-top: 20px;
-}
-
-button {
-    background: #FFD700;
-    color: #0a0a23;
-    border: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-button:hover {
-    background: #f4c430;
-}
-
-.hidden {
+    margin: 15px auto;
+    width: 80%;
+    max-width: 90%;
     display: none;
 }
 
-.struggle-paragraph {
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeInText 3s forwards;
+/* Enchanting Button */
+button {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 15px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 12px rgba(255, 120, 150, 0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes fadeInText {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+button:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #ff9a8b, #ff6f91);
+}
+
+/* Special Handwritten Font */
+.special-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e85a4f;
+    text-shadow: 2px 2px 8px rgba(255, 100, 100, 0.4);
+}
+
+/* Fade-in Effect */
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container,
+h1,
+.letter-text,
+button {
+    animation: fadeIn 1.2s ease-in-out;
 }
