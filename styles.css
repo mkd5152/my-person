@@ -10,6 +10,15 @@ body {
     transition: background 0.5s, color 0.5s;
 }
 
+button#comfortButton.hidden,
+button#readStruggles.hidden {
+    display: none;
+}
+
+p#midnightMessage.hidden {
+    display: none;
+}
+
 /* Background Animation */
 @keyframes bgShift {
     0% {
