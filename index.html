@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Person</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hey, My Person.</h1>
+        <p id="midnightMessage" class="hidden">I know nights are hard, but I’m right here. Always. 🕯️</p>
+
+        <button id="startButton">Click to Continue</button>
+
+        <div id="letterContainer" class="hidden">
+            <p class="letter-text" id="line1"></p>
+            <p class="letter-text" id="line2"></p>
+            <p class="letter-text" id="line3"></p>
+            <p class="letter-text" id="line4"></p>
+            <p class="letter-text" id="line5"></p>
+            <p class="letter-text" id="line6"></p>
+            <p class="letter-text" id="line7"></p>
+            <button id="comfortButton" class="hidden">If You Need Me, Click Here</button>
+        </div>
+
+        <button id="readStruggles" class="hidden" onclick="window.location.href='letter.html'">Your Strength, In
+            Words</button>
+
+        <div id="hiddenMessage" class="hidden">
+            <p>You don’t have to say anything. I already know. 💛</p>
+        </div>
+
+        <div class="breathing-container hidden">
+            <p>Breathe with me.</p>
+            <div class="breathing-circle"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
